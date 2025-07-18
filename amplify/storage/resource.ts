@@ -10,14 +10,12 @@ export const storage = defineStorage({
     ],
     'admin/*': [
         allow.groups(['admin']).to(['read', 'write', 'delete']),
-        allow.authenticated.to(['read'])
+        allow.authenticated.to(['list'])
     ],
-    'private/{entity_id}/*': [
-        allow.entity('identity').to(['read', 'write', 'delete'])
-    ]
    })
 });
 
+/*
 export const secondaryStorage = defineStorage({
   name: 'mySecondaryStorageBucket',
    access: (allow) => ({
@@ -34,6 +32,6 @@ export const secondaryStorage = defineStorage({
     ]
    })
 });
-
+*/
 
 
