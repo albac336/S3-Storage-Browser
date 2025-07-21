@@ -7,7 +7,7 @@ import { defineAuth } from '@aws-amplify/backend';
 export const auth = defineAuth({
   userAttributes: {
     preferredUsername: {
-      mutable: true,
+      mutable: false,
       required: true,
     },
   },
