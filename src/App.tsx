@@ -17,11 +17,11 @@ const { StorageBrowser } = createStorageBrowser({
 
 function App() {
   return (
-    <Authenticator hideSignUp loginMechanisms={['username']}>
+    <Authenticator loginMechanisms={['username']}>
       {({ signOut, user }) => (
         <>
           <div className="header">
-            <h1>{`Ciao ${user}`}</h1>
+            <h1>{`Ciao ${user?.signInDetails}`}</h1>
             <Button onClick={signOut}>Sign out</Button>
           </div>
           <StorageBrowser />
