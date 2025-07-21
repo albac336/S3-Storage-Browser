@@ -17,11 +17,11 @@ const { StorageBrowser } = createStorageBrowser({
 
 function App() {
   return (
-    <Authenticator loginMechanisms={['username']}>
-      {({ signOut, user }) => (
+    <Authenticator hideSignUp loginMechanisms={['username']}>
+      {({ signOut }) => (
         <>
           <div className="header">
-            <h1>{`Benvenut* ${user?.username} nell'area intranet`}</h1>
+            <h1>{`Area Intranet`}</h1>
             <Button onClick={signOut}>Sign out</Button>
           </div>
           <StorageBrowser />

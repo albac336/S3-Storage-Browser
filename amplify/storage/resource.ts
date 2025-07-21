@@ -5,16 +5,18 @@ export const storage = defineStorage({
   isDefault: true,
   access: (allow) => ({
     'qualita/*': [
-      allow.authenticated.to(['read', 'write', 'delete']),
       allow.groups(['admin']).to(['read', 'write', 'delete']),
+      allow.groups(['adm-qualita-codess']).to(['read', 'write', 'delete']),
+      allow.groups(['qualita-codess']).to(['read']),
     ],
-    'admin/*': [
+    'qualita infanzia/*': [
       allow.groups(['admin']).to(['read', 'write', 'delete']),
-      allow.authenticated.to(['list']),
+      allow.groups(['adm-qualita-infanzia']).to(['read', 'write', 'delete']),
+      allow.groups(['qualita-infanzia']).to(['read']),
     ],
-    'qualita-codess/*': [
-      allow.groups(['qualita-codess']).to(['read', 'write', 'delete']),
-      allow.authenticated.to(['list']),
+    'test-impostazioni/*': [
+      allow.groups(['admin']).to(['read', 'write', 'delete']),
+      allow.groups(['gruppo-test']).to(['read', 'write', 'delete']),
     ],
   }),
 });

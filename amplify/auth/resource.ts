@@ -12,7 +12,14 @@ export const auth = defineAuth({
     },
   },
 
-  groups: ['admin', 'qualita-codess'],
+  groups: [
+    'admin',
+    'adm-qualita-codess',
+    'qualita-codess',
+    'adm-qualita-infanzia',
+    'qualita-infanzia',
+    'gruppo-test',
+  ],
   loginWith: {
     email: true,
   },
