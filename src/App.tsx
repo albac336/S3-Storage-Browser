@@ -8,6 +8,7 @@ import './App.css';
 import config from '../amplify_outputs.json';
 import { Amplify } from 'aws-amplify';
 import { Authenticator, Button } from '@aws-amplify/ui-react';
+
 Amplify.configure(config);
 
 const { StorageBrowser } = createStorageBrowser({
@@ -16,11 +17,11 @@ const { StorageBrowser } = createStorageBrowser({
 
 function App() {
   return (
-    <Authenticator>
+    <Authenticator hideSignUp>
       {({ signOut, user }) => (
         <>
           <div className="header">
-            <h1>{`Hello ${user?.username}`}</h1>
+            <h1>{`Ciao ${user.userId}`}</h1>
             <Button onClick={signOut}>Sign out</Button>
           </div>
           <StorageBrowser />
