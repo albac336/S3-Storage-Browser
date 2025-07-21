@@ -12,7 +12,7 @@ export const auth = defineAuth({
     },
   },
 
-  groups: ['admin'],
+  groups: ['admin', 'qualita-codess'],
   loginWith: {
     email: true,
   },
